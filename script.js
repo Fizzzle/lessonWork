@@ -1,24 +1,41 @@
 'use strict';
 
-const str = 'Test';
-const arr = [1, 2, 4];
+const options = {
+    name: 'test',
+    width: 1024,
+    Height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red',
+    },
+    makeTest: function(){
+        console.log('test');
+    }    
+};
 
-console.log(str.toLowerCase());
-
-const fruit = 'Some fruit';
-
-console.log(fruit.indexOf('fruit'));
-
-const logg = 'Hello World!';
-
-console.log(logg.slice(6, 10));
-
-console.log(logg.substr(6, 5));
+const {border, bg} = options.colors;
 
 
-const num = 12.5;
-console.log(Math.round(num));
+options.makeTest();
 
-const test = '12.2px';
+console.log(Object.keys(options).length);
 
-console.log(parseFloat(test));
+// console.log(options['colors']['bg']);
+
+// let counter = 0;
+// for(let key in options){
+//     console.log(`свойство ${key} имеет значение options`);
+//     counter++;
+// }
+// console.log(counter);
+
+// for(let key in options) {
+//     if (typeof(options[key]) === 'object'){
+//         for (let i in options[key]) {
+//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+//         }
+//     } else {
+//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
+//     }    
+// };
+
