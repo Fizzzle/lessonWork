@@ -1,41 +1,85 @@
 'use strict';
 
-const options = {
-    name: 'test',
-    width: 1024,
-    Height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red',
-    },
-    makeTest: function(){
-        console.log('test');
-    }    
+let a = 5,
+    b = a;
+
+b = b + 5;
+
+console.log(b);
+console.log(a);
+
+
+const obj = {
+    a:5,
+    b:1,
 };
 
-const {border, bg} = options.colors;
+function copy(mainObj) {
+    let objCopy = {};
+
+    let key;
+    for (key in mainObj){
+        objCopy[key] = mainObj[key];
+    }
+
+    return objCopy;
+}
+
+const numbers = {
+    a: 2,
+    b: 5,
+    c: {
+        x:7,
+        y:4
+    }
+};
+
+const newNumber = copy(numbers);
+
+newNumber.a = 10;
+newNumber.c.x = 10;
+
+console.log(newNumber);
+
+const add = {
+    d: 17,
+    e: 20,
+};
+
+let sopy = Object.assign({}, add);
+
+console.log(sopy);
 
 
-options.makeTest();
+const oldArray = ['a', 'b', 'c'];
+const newArray = oldArray.slice();
 
-console.log(Object.keys(options).length);
+newArray.unshift('a');
+console.log(newArray);
+console.log(oldArray);
 
-// console.log(options['colors']['bg']);
+const video = ['youtube', 'vimeo','rutube','twitch'],
+    blogs = ['wordpress', 'livejournal', 'blogger'],
+    internet = [...video, ...blogs, 'vk', 'facebook'];
 
-// let counter = 0;
-// for(let key in options){
-//     console.log(`свойство ${key} имеет значение options`);
-//     counter++;
-// }
-// console.log(counter);
+console.log(internet);
 
-// for(let key in options) {
-//     if (typeof(options[key]) === 'object'){
-//         for (let i in options[key]) {
-//             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
-//         }
-//     } else {
-//         console.log(`Свойство ${key} имеет значение ${options[key]}`);
-//     }    
-// };
+function log(a, b, c){
+    console.log(a);
+    console.log(b);
+    console.log(c);
+}
 
+const num = ["имя", "фамилия", "подпись"];
+log(...num);
+
+const array = ['a', 'b', 'c'];
+
+const newAarray = [...array];
+
+const q = {
+    one: 1,
+    two: 2,
+};
+
+const newObj = {...q};
