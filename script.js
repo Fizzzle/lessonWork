@@ -13,7 +13,6 @@ const soldier = {
     armor: 100
 };
 
-
-object.setPrototypeOf(john, soldier);
-
 const john = Object.create(soldier);
+
+john.health = 100;
